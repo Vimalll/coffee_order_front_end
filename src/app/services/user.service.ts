@@ -9,16 +9,23 @@ export class UserService {
   baseUrl="http://localhost:9595"
 
   constructor(private http:HttpClient) { }
-
-  getUser()
-  {
-    return this.http.get(`${this.baseUrl}/getusers`)
-  }
-
-  //sending details for new user to server
+  
+ //sending details to register new users and store their data in database 
 
   send_details(credentials:any)
   {
     return this.http.post(`${this.baseUrl}/registration`,credentials);
+   }
+
+   //for sending user payment ammount to server
+
+   orderrequest(amount:any)
+   {
+    return this.http.post(`${this.baseUrl}/createorder`,amount);
+   }
+
+   updatepayment(payment_data:any)
+   {
+    return this.http.post(`${this.baseUrl}/update_order`,payment_data);
    }
 }

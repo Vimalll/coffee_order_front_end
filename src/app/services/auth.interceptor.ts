@@ -8,7 +8,7 @@ export class AuthInterceptor implements HttpInterceptor{
 
     constructor(private loginService:LoginService)
     {}
-
+// every request that is being sent to the server, intercept adds required headers
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
        
        let newReq=req;

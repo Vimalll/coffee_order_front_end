@@ -12,7 +12,6 @@ export class EntryComponent implements OnInit {
   credentials={
     username:'',
     password:'',
-    id:'',
     email:'',
   }
 

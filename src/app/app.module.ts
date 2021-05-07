@@ -21,7 +21,7 @@ import { EntryComponent } from './entry/entry.component';
 import {MatCardModule} from '@angular/material/card';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
-
+import { WindowRef } from './services/window.payment';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,7 @@ import {MatTableModule} from '@angular/material/table';
     
 
   ],
-  providers: [LoginService, AuthGuard , [{ provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true }]],
+  providers: [ WindowRef, LoginService, AuthGuard , [{ provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true }]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

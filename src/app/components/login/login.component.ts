@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
          (response:any)=>{
            //success
            console.log(response.token);
-           this.loginService.loginUser(response.token)
+           this.loginService.loginUser(response.token)  // for storing token in local storage
            window.location.href="/dashboard"
          },
          error=>{
